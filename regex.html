@@ -1,0 +1,18 @@
+global/regular expression/print
+
+? - match 0 or 1 times
+* - match 0 or more times
++ - match 1 or more times
+. - wild card 
+{n} - specify numbers to match
+{n,m} - specify the minimum and maximum numbers
+
+/#[ABCDEF0123456789]+/ => regular expression to match A-F and 0-9
+/#[A-F0-9]+/ => short hand on the regex above
+/#?[A-F0-9]+/ => # sign in front can be optional
+/#?[A-F0-9]{6}/ => # can be optional and it should be 6 character
+/#?([A-F0-9]{6}|[A-F0-9]{3})/ => match 3 character or 6
+/#?([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})/ => match 3 character or 6 and lowercase
+/#?([A-F0-9]{6}|[A-F0-9]{3})/i => i denotes case insensitive, better than above
+/^#?([A-F0-9]{6}|[A-F0-9]{3})$/i => ^ denotes that match should start from beginning and $ denotes match until end
+/^\s*#?([A-F0-9]{6}|[A-F0-9]{3})\s*$/i => \s* will match all whitespace
